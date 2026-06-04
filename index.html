@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的博客 - Modern Blog</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 导航栏 -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html">📝 My Blog</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="#" id="categories-link">分类</a></li>
+                    <li><a href="#" id="tags-link">标签</a></li>
+                    <li><a href="#" id="about-link">关于</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- 搜索栏 -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="搜索文章..." class="search-input">
+            <button id="search-btn" class="search-btn">搜索</button>
+        </div>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <!-- 侧边栏 -->
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3>分类</h3>
+                    <ul id="categories-list" class="category-list">
+                    </ul>
+                </div>
+                <div class="widget">
+                    <h3>热门标签</h3>
+                    <div id="tags-cloud" class="tags-cloud">
+                    </div>
+                </div>
+                <div class="widget">
+                    <h3>关于作者</h3>
+                    <p>欢迎来到我的博客！这里分享我的技术见解和生活感悟。</p>
+                </div>
+            </aside>
+
+            <!-- 文章列表 -->
+            <section class="posts-container">
+                <div id="posts-list" class="posts-list">
+                    <!-- 动态生成 -->
+                </div>
+                <div id="no-posts" class="no-posts" style="display:none;">
+                    <p>暂无文章</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>&copy; 2026 My Blog. All rights reserved.</p>
+    </footer>
+
+    <!-- 模态框 - 分类详情 -->
+    <div id="category-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="category-title"></h2>
+            <div id="category-posts"></div>
+        </div>
+    </div>
+
+    <!-- 模态框 - 标签详情 -->
+    <div id="tag-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="tag-title"></h2>
+            <div id="tag-posts"></div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
