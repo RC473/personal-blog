@@ -7,7 +7,7 @@ const api = {
   async list() {
     const res = await fetch(`${SUPABASE_URL}/storage/v1/object/list/${BUCKET}`, {
       method: 'POST',
-      headers: { 'Authorization': `Bearer ${SUPABASE_ANON_KEY}`, 'Content-Type': 'application/json' },
+      headers: { 'Authorization': `Bearer ${SUPABASE_ANON_KEY}`, 'apikey': SUPABASE_ANON_KEY, 'Content-Type': 'application/json' },
       body: JSON.stringify({ prefix: '', limit: 100, sortBy: { column: 'created_at', order: 'desc' } })
     });
     return res.json();
@@ -16,7 +16,7 @@ const api = {
   async upload(file) {
     const res = await fetch(`${SUPABASE_URL}/storage/v1/object/${BUCKET}/${encodeURIComponent(file.name)}`, {
       method: 'POST',
-      headers: { 'Authorization': `Bearer ${SUPABASE_ANON_KEY}`, 'Content-Type': file.type || 'application/octet-stream' },
+      headers: { 'Authorization': `Bearer ${SUPABASE_ANON_KEY}`, 'apikey': SUPABASE_ANON_KEY, 'Content-Type': file.type || 'application/octet-stream' },
       body: file
     });
     return res.json();
@@ -25,7 +25,7 @@ const api = {
   async delete(name) {
     const res = await fetch(`${SUPABASE_URL}/storage/v1/object/${BUCKET}/${encodeURIComponent(name)}`, {
       method: 'DELETE',
-      headers: { 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
+      headers: { 'Authorization': `Bearer ${SUPABASE_ANON_KEY}`, 'apikey': SUPABASE_ANON_KEY }
     });
     return res.json();
   },
@@ -118,6 +118,7 @@ function uploadFile(file) {
   const xhr = new XMLHttpRequest();
   xhr.open('POST', `${SUPABASE_URL}/storage/v1/object/${BUCKET}/${encodeURIComponent(file.name)}`);
   xhr.setRequestHeader('Authorization', `Bearer ${SUPABASE_ANON_KEY}`);
+  xhr.setRequestHeader('apikey', SUPABASE_ANON_KEY);
   xhr.setRequestHeader('Content-Type', file.type || 'application/octet-stream');
 
   xhr.upload.addEventListener('progress', e => {
