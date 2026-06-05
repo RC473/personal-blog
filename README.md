@@ -171,11 +171,6 @@ MIT License - 自由使用和修改
 
 欢迎提交 Issue 和 Pull Request！
 
-## 📞 联系方式
-
-- 邮箱：your-email@example.com
-- GitHub：[你的 GitHub]
-- Twitter：[@你的推特]
 
 ---
 
