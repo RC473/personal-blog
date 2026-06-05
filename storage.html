@@ -10,6 +10,7 @@
 </head>
 <body>
     <div class="container">
+        <!-- 导航栏 -->
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
@@ -17,38 +18,80 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html">首页</a></li>
-                    <li><a href="storage.html" class="active">资源库</a></li>
+                    <li><a href="#" id="categories-link">分类</a></li>
+                    <li><a href="#" id="tags-link">标签</a></li>
+                    <li><a href="storage.html" class="active">📚 网盘</a></li>
+                    <li><a href="#" id="about-link">关于</a></li>
                 </ul>
             </div>
         </nav>
+
+        <!-- 主内容 -->
         <main class="storage-main">
+            <!-- 资源库头部 -->
             <section class="storage-header">
-                <h1>📚 共享资源库</h1>
+                <div class="header-content">
+                    <h1>📚 共享资源库</h1>
+                    <p>在这里上传和分享你的资源文件</p>
+                </div>
                 <div class="storage-stats">
                     <div class="stat-item">
-                        <span class="stat-label">文件</span>
-                        <span class="stat-value" id="file-count">0</span>
+                        <span class="stat-icon">📄</span>
+                        <div class="stat-info">
+                            <span class="stat-label">文件总数</span>
+                            <span class="stat-value" id="file-count">0</span>
+                        </div>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-label">容量</span>
-                        <span class="stat-value" id="storage-usage">0 MB</span>
+                        <span class="stat-icon">💾</span>
+                        <div class="stat-info">
+                            <span class="stat-label">总容量</span>
+                            <span class="stat-value" id="storage-usage">0 MB</span>
+                        </div>
                     </div>
                 </div>
             </section>
+
+            <!-- 上传区域 -->
             <section class="upload-section">
                 <div class="upload-zone" id="upload-zone">
-                    <h2>📤 拖拽或点击上传</h2>
+                    <div class="upload-icon">📤</div>
+                    <h2>拖拽文件到这里</h2>
+                    <p>或点击下方按钮选择文件</p>
                     <button class="btn-upload" id="select-files">选择文件</button>
                     <input type="file" id="file-input" multiple hidden>
                 </div>
             </section>
+
+            <!-- 文件列表区域 -->
             <section class="files-section">
-                <h2>文件列表</h2>
-                <div id="files-container" class="files-container"></div>
+                <div class="files-header">
+                    <h2>📋 文件列表</h2>
+                    <div class="filter-options">
+                        <input type="text" id="file-search" placeholder="搜索文件..." class="file-search">
+                        <select id="file-sort" class="file-sort">
+                            <option value="date-desc">最新上传</option>
+                            <option value="date-asc">最早上传</option>
+                            <option value="size-desc">大小：从大到小</option>
+                            <option value="size-asc">大小：从小到大</option>
+                            <option value="name-asc">名称：A-Z</option>
+                            <option value="name-desc">���称：Z-A</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="files-container" class="files-container">
+                    <!-- 文件卡片动态生成 -->
+                </div>
+                <div id="no-files" class="no-files" style="display:none;">
+                    <p>暂无文件，开始上传吧！</p>
+                </div>
             </section>
         </main>
     </div>
-    <footer class="footer"><p>&copy; 2026 My Blog</p></footer>
+
+    <!-- 页脚 -->
+    <footer class="footer"><p>&copy; 2026 My Blog. All rights reserved.</p></footer>
+
     <script src="js/storage-db.js"></script>
     <script src="js/storage.js"></script>
 </body>
