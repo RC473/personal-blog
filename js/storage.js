@@ -1,4 +1,4 @@
-const SUPABASE_URL = 'https://gqwxslartbdvfjgxcmye.supabase.co/rest/v1/';
+const SUPABASE_URL = 'https://gqwxslartbdvfjgxcmye.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdxd3hzbGFydGJkdmZqZ3hjbXllIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2NjQyODUsImV4cCI6MjA5NjI0MDI4NX0.6domkvEQg1gdfRWDf0SqhIBwgCBPs3lEH0xxCS4gBU8';
 const BUCKET = 'blog-files';
 
