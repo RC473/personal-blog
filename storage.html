@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资源库 - My Blog</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/storage.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html">📝 My Blog</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="storage.html" class="active">资源库</a></li>
+                </ul>
+            </div>
+        </nav>
+        <main class="storage-main">
+            <section class="storage-header">
+                <h1>📚 共享资源库</h1>
+                <div class="storage-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">文件</span>
+                        <span class="stat-value" id="file-count">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">容量</span>
+                        <span class="stat-value" id="storage-usage">0 MB</span>
+                    </div>
+                </div>
+            </section>
+            <section class="upload-section">
+                <div class="upload-zone" id="upload-zone">
+                    <h2>📤 拖拽或点击上传</h2>
+                    <button class="btn-upload" id="select-files">选择文件</button>
+                    <input type="file" id="file-input" multiple hidden>
+                </div>
+            </section>
+            <section class="files-section">
+                <h2>文件列表</h2>
+                <div id="files-container" class="files-container"></div>
+            </section>
+        </main>
+    </div>
+    <footer class="footer"><p>&copy; 2026 My Blog</p></footer>
+    <script src="js/storage-db.js"></script>
+    <script src="js/storage.js"></script>
+</body>
+</html>
