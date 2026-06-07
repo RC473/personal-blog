@@ -21,6 +21,7 @@
                     <li><a href="#" id="tags-link">标签</a></li>
                     <li><a href="storage.html">📚 网盘</a></li>
                     <li><a href="#" id="about-link">关于</a></li>
+                    <li><a href="admin.html">⚙️ 管理</a></li>
                 </ul>
             </div>
         </nav>
@@ -37,13 +38,11 @@
             <aside class="sidebar">
                 <div class="widget">
                     <h3>分类</h3>
-                    <ul id="categories-list" class="category-list">
-                    </ul>
+                    <ul id="categories-list" class="category-list"></ul>
                 </div>
                 <div class="widget">
                     <h3>热门标签</h3>
-                    <div id="tags-cloud" class="tags-cloud">
-                    </div>
+                    <div id="tags-cloud" class="tags-cloud"></div>
                 </div>
                 <div class="widget">
                     <h3>关于作者</h3>
@@ -53,9 +52,7 @@
 
             <!-- 文章列表 -->
             <section class="posts-container">
-                <div id="posts-list" class="posts-list">
-                    <!-- 动态生成 -->
-                </div>
+                <div id="posts-list" class="posts-list"></div>
                 <div id="no-posts" class="no-posts" style="display:none;">
                     <p>暂无文章</p>
                 </div>
@@ -86,6 +83,7 @@
         </div>
     </div>
 
+    <script src="js/supabase.js"></script>
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
 </body>
